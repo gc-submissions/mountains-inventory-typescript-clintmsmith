@@ -10,6 +10,9 @@ let products:Product[] = [
 ]
 
 export function calcAverageProductPrice(array:Product[]) : number {
+    if (array.length === 0) {
+        return 0
+    } else {
     let sum = 0;
 
     for(let i = 0; i < array.length; i++) {
@@ -19,6 +22,7 @@ export function calcAverageProductPrice(array:Product[]) : number {
     let average = sum / array.length;
     let roundedAverage = Number(average.toFixed(2));
     return roundedAverage;
+    }
 }
 
 console.log(calcAverageProductPrice(products));
